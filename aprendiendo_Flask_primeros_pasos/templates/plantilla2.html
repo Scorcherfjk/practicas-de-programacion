@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block title%} 
+Variables
+{% endblock %}
+
+
+{% block contenido %}
+
+	<h1> Hola {{nombre}}</h1>
+		<h2> Tu edad es {{ edad }}</h2>
+		{% if edad > 18 %}
+			<p> {{nombre}} es mayor de edad porque tiene {{ edad }} años </p>
+		{% else %}
+			<p>Eres un pinche menor</p>
+		{% endif %}
+
+		{% for i in lista %}
+			<p> recorriendo la posicion que tiene el valor {{ i }}</p>
+		{% endfor %}
+
+{% endblock %}
