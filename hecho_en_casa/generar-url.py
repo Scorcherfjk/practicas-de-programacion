@@ -30,15 +30,16 @@ def codigo(lista,variable):
 mezclar(ABC,mix)
 mezclar(abc,mix)
 mezclar(num,mix)
-var = codigo(mix,variable)
+variable = codigo(mix,variable)
 
 print(variable)
+
 url = constante + variable
 
 while True:
 	opcion = input("desea abrir la url generada en el Browser? (y,n)")
-		if opcion == "y":
-			webbrowser.open_new_tab(url)
-		else:
-			print("adios")
-			break
+	if opcion == "y":
+		webbrowser.open_new_tab(url)
+	else:
+		print("adios")
+		break
