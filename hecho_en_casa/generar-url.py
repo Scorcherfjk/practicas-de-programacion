@@ -21,13 +21,16 @@ combinando:
 	bucles
 
 """
+#importar modulos
 import webbrowser, pickle
 from io import open
 from FuncionesConRandom import *
 
+#abrir archivos binarios en modo lectura
 mayusculas = open('abecedarioMayusculas.pckl','rb')
 minusculas = open('abecedarioMinusculas.pckl','rb')
 
+#definir variables
 constante = 'https://www.youtube.com/watch?v='
 ABC = pickle.load(mayusculas)
 abc = pickle.load(minusculas)
@@ -35,14 +38,16 @@ num = [i for i in range(10)]
 variable = ''
 mix = []
 
+#llamada de funciones
 mezclar(ABC,mix)
 mezclar(abc,mix)
 mezclar(num,mix)
-variable = codigo(mix,variable,11)
-
+variable = codigo(mix,11)
 print(variable)
 url = constante + variable
 
+
+#menu de acciones
 while True:
 	opcion = input("desea abrir la url generada en el Browser? (y,n)")
 	if opcion == "y":
@@ -54,5 +59,6 @@ while True:
 		print("intentalo de nuevo")
 
 
+#cerrar archivos abiertos al final
 mayusculas.close()
 minusculas.close()
