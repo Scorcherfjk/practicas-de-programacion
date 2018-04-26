@@ -1,5 +1,7 @@
-############ descomponer un numero de 4 cifras ############
-n = '1234'
+""" descomponer un numero de 4 cifras """
+from sys import argv
+
+n = argv[1]
 if len(n) == 4:
 	numero = int(n)
 	if 0 < numero <= 9999:
