@@ -7,8 +7,7 @@ conexion = connect('almacen.db')
 cursor = conexion.cursor()
 
 #consulta
-cursor.execute("SELECT cantidad, nombre, precios FROM productos WHERE cantidad > 0")
-datos = cursor.fetchall()
+datos = cursor.execute("SELECT cantidad, nombre, precios FROM productos WHERE cantidad > 0").fetchall()
 print(datos)
 
 #cerrar la conexion

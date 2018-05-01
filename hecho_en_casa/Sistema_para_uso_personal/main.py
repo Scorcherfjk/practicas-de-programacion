@@ -33,6 +33,7 @@ while True:
 	if opcion == 4:
 		prod_total(cursor)
 	if opcion == 5:
+		run("clear")
 		print("\nadios!")
 		break
 	else:
