@@ -2,6 +2,7 @@ from subprocess import run
 from sqlite3 import connect
 
 
+
 def res_long(datos):
 	if datos == []:
 		print("no hay productos disponibles")
