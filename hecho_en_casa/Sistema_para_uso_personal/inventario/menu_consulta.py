@@ -1,18 +1,15 @@
 from subprocess import run
-from sqlite3 import connect
-from operaciones_consulta import *
-
-run("clear")
-opcion = None
-
-#abrir la conexion
-conexion = connect('almacen.db')
-cursor = conexion.cursor()
+from inventario.operaciones_consulta import *
 
 #menu
-def menu_consulta():
+def menu_consulta(cursor):
+	opcion = None
 	while True:
 		try:
+			try:
+				run("clear")
+			except:
+				pass
 			opcion = int(input("""\nSeleccione la opcion requerida
 
 1) productos disponibles
@@ -38,10 +35,3 @@ def menu_consulta():
 			break
 		else:
 			print("\nIntentelo de nuevo")
-
-menu_consulta()
-
-
-#cerrar la conexion
-del(cursor)
-conexion.close()

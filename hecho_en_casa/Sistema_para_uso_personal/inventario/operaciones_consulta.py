@@ -19,22 +19,22 @@ def res_short(datos):
 
 def prod_disp(cursor):
 	run("clear")
-	datos = cursor.execute("SELECT cantidad, nombre, precios FROM productos WHERE cantidad > 0").fetchall()
+	datos = cursor.execute("SELECT cantidad, nombre, precio FROM productos WHERE cantidad > 0").fetchall()
 	res_long(datos)
 
 def prod_poca_exis(cursor):
 	run("clear")
-	datos = cursor.execute("SELECT cantidad, nombre, precios FROM productos WHERE cantidad BETWEEN 1 AND 3").fetchall()
+	datos = cursor.execute("SELECT cantidad, nombre, precio FROM productos WHERE cantidad BETWEEN 1 AND 3").fetchall()
 	res_long(datos)
 
 def prod_exis(cursor):
 	run("clear")
-	datos = cursor.execute("SELECT nombre, precios FROM productos WHERE cantidad = 0").fetchall()
+	datos = cursor.execute("SELECT nombre, precio FROM productos WHERE cantidad = 0").fetchall()
 	res_short(datos)
 
 
 def prod_total(cursor):
 	run("clear")
-	datos = cursor.execute("SELECT nombre, precios FROM productos").fetchall()
+	datos = cursor.execute("SELECT nombre, precio FROM productos").fetchall()
 	res_short(datos)
 
