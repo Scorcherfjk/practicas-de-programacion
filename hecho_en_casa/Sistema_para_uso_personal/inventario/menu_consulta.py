@@ -23,13 +23,13 @@ def menu_consulta(cursor):
 			print("ingrese un valor valido")
 		if opcion == 1:
 			prod_disp(cursor)
-		if opcion == 2:
+		elif opcion == 2:
 			prod_poca_exis(cursor)
-		if opcion == 3:
+		elif opcion == 3:
 			prod_exis(cursor)
-		if opcion == 4:
+		elif opcion == 4:
 			prod_total(cursor)
-		if opcion == 5:
+		elif opcion == 5:
 			run("clear")
 			print("\nadios!")
 			break

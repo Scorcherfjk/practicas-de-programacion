@@ -1,21 +1,19 @@
 from subprocess import run
 from sqlite3 import connect
 
-
-
 def res_long(datos):
 	if datos == []:
 		print("no hay productos disponibles")
 	else:
 		for i in datos:
-			print("hay {} de {} de {}/S cada uno, un total de {}/S".format(i[0],i[1],i[2],i[0]*i[2]))
+			print("hay {} \t de {} \t de S/ {} cada uno, \t un total de S/ {:04.2f}".format(i[0],i[1],i[2],i[0]*i[2]))
 
 def res_short(datos):
 	if datos == []:
 			print("no hay productos disponibles")
 	else:
-		for i in datos:
-			print("{} a {}/S cada uno".format(i[0],i[1],))
+		for n,i in enumerate(datos):
+			print("{}.- {} \t a S/ {} cada uno".format(n,i[0],i[1],))
 
 def prod_disp(cursor):
 	run("clear")
@@ -24,7 +22,7 @@ def prod_disp(cursor):
 
 def prod_poca_exis(cursor):
 	run("clear")
-	datos = cursor.execute("SELECT cantidad, nombre, precio FROM productos WHERE cantidad BETWEEN 1 AND 3").fetchall()
+	datos = cursor.execute("SELECT cantidad, nombre, precio FROM productos WHERE cantidad BETWEEN 0.01 AND 3").fetchall()
 	res_long(datos)
 
 def prod_exis(cursor):
@@ -37,4 +35,3 @@ def prod_total(cursor):
 	run("clear")
 	datos = cursor.execute("SELECT nombre, precio FROM productos").fetchall()
 	res_short(datos)
-
