@@ -1,5 +1,4 @@
 from inventario.menu_consulta import *
-from subprocess import run
 from sqlite3 import connect
 
 if __name__ == '__main__':
