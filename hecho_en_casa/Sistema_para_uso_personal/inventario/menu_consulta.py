@@ -3,13 +3,12 @@ from inventario.operaciones_consulta import *
 
 #menu
 def menu_consulta(cursor):
+	
 	opcion = None
+	
 	while True:
 		try:
-			try:
-				run("clear")
-			except:
-				pass
+			run("clear")
 			opcion = int(input("""\nSeleccione la opcion requerida
 
 1) productos disponibles
@@ -18,9 +17,11 @@ def menu_consulta(cursor):
 4) todos los productos
 5) salir
 """))
+
 		except ValueError:
 			run("clear")
 			print("ingrese un valor valido")
+
 		if opcion == 1:
 			prod_disp(cursor)
 		elif opcion == 2:
