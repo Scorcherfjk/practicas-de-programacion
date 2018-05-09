@@ -1,4 +1,4 @@
-from inventario.menu_consulta import *
+from inventario.menus import *
 from sqlite3 import connect
 
 if __name__ == '__main__':
@@ -7,8 +7,9 @@ if __name__ == '__main__':
 	cursor = conexion.cursor()
 
 	#menu de consulta
-	menu_consulta(cursor)
+	menu_general(cursor)
 
 	#cerrando conexion
 	del(cursor)
+	conexion.commit()
 	conexion.close()
