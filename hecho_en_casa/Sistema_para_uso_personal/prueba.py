@@ -7,7 +7,7 @@ if __name__ == '__main__':
 	cursor = conexion.cursor()
 
 	#menu de consulta
-	agregar_prod(cursor)
+	modificar_prod(cursor)
 
 	#cerrando conexion
 	del(cursor)
