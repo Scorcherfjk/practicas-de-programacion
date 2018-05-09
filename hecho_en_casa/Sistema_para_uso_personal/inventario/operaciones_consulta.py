@@ -17,12 +17,11 @@ def res_short(datos):
 	if datos == []:
 			print( "no hay productos disponibles"  )
 	else:
-		for n,i in enumerate(datos):
-			print("{contador}.- {nombre} \t a S/ {precio} cada {medida}".format(
-				contador=n, 
-				nombre=i[0], 
-				precio=i[1], 
-				medida=i[2] ))
+		print("id | nombre    |   precio  | medida      |")
+		print("=========================================#")
+		for i in datos:
+			print("{codigo}.- {nombre} \t a S/ {precio} cada {medida} \t |".format(codigo=i[3], nombre=i[0], precio=i[1], medida=i[2] ))
+		print("=========================================#")
 
 def prod_disp(cursor):
 	run( "clear" )
@@ -48,6 +47,7 @@ def prod_poca_exis(cursor):
 	res_long( datos )
 
 def prod_exis(cursor):
+<<<<<<< HEAD
 	run( "clear" )
 	datos = cursor.execute("""
 		SELECT productos.nombre, productos.precio, medidas.medida 
@@ -67,3 +67,14 @@ def prod_total(cursor):
 		ON(medidas.id = productos.tipo_medida)
 		""").fetchall()
 	res_short( datos )
+=======
+	run("clear")
+	datos = cursor.execute("SELECT productos.nombre, productos.precio, medidas.medida, productos.id FROM productos INNER JOIN medidas ON(medidas.id = productos.tipo_medida) WHERE productos.cantidad = 0").fetchall()
+	res_short(datos)
+
+
+def prod_total(cursor):
+	run("clear")
+	datos = cursor.execute("SELECT productos.nombre, productos.precio, medidas.medida, productos.id FROM productos INNER JOIN medidas ON(medidas.id = productos.tipo_medida)").fetchall()
+	res_short(datos)
+>>>>>>> feature-CRUD
