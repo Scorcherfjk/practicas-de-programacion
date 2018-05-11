@@ -47,8 +47,10 @@ se a#adira {cantidad} {medida} de {nombre} a S/{precio} cada {medida}
 # selecciona un producto de acuerdo a su identificador y pide verificacion
 def seleccion_prod(cursor):
 	while True:
+		codigo = []
 		try:
-			codigo = list( input( "introduzca el codigo del producto: \t" ) )
+			cd = int(input( "introduzca el codigo del producto: \t" ))
+			codigo.append(cd)
 			datos = cursor.execute("""
 				SELECT productos.nombre, productos.precio, medidas.medida, productos.id 
 				FROM productos 
@@ -115,5 +117,6 @@ def eliminar_prod(cursor):
 		datos = cursor.execute("""
 			DELETE FROM productos
 			WHERE id = ?
-			""". codigo)
+			""", codigo)
+
 		print("\nProducto eliminado satisfactoriamente")

@@ -56,7 +56,7 @@ def variable(nombre_prueba=''):
 	return render_template('plantilla2.html', nombre=nombre_prueba, edad=edad_persona, lista=lista_prueba)
 
 
-#validacion que aun no conozco!
+#validacion que se ejecute desde este archivo
 if __name__ == '__main__':
 	#Se inicia el servidor
 	app.run( debug=True, port=80 )
