@@ -1,4 +1,4 @@
-from inventario.menus import *
+from inventario.menus import menu_general
 from sqlite3 import connect
 
 if __name__ == '__main__':
