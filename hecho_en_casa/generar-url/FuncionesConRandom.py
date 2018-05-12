@@ -16,6 +16,7 @@ la cantidad de caracateres de la variable
 este mezclara la lista recibida y generara un alfanumerico aleatorio de la longitud de caracteres deseada"""
 	global variable
 	for i in range(longitud):
+		i
 		random.shuffle(lista)
 		variable = variable + str(random.choice(lista))
 	return variable

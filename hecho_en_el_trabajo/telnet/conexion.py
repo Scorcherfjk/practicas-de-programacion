@@ -1,6 +1,6 @@
 import datetime, pytz, locale
 locale.setlocale(locale.LC_ALL, 'es-ES')
-dt = datetime.datetime.now(pytz.timezone('America/Caracas'))
+dt = datetime.datetime.now(pytz.timezone('America/Lima'))
 
 def conexion(direccion, puerto):
 	"""realiza una conexion Telnet a un host y un puerto especifico. recibiendo solo 2 parametros para ello.
@@ -19,7 +19,6 @@ def conexion(direccion, puerto):
 		Generando al final un log de resultados de transaccion"""
 
 	from telnetlib import Telnet
-	from io import open
 	log = open('conexion_telnet.log','a+')
 	try:
 		with Telnet(direccion, puerto) as tn:
