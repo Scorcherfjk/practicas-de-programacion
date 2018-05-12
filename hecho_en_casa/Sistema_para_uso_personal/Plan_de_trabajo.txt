@@ -1,3 +1,0 @@
-desarrollar 2 modulos especificos.
-uno de control de inventario
-y otro de facturacion que permitan afectar la misma base de datos
