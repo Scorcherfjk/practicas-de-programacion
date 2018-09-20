@@ -59,4 +59,4 @@ def variable(nombre_prueba=''):
 #validacion que se ejecute desde este archivo
 if __name__ == '__main__':
 	#Se inicia el servidor
-	app.run( debug=True, port=80 )
+	app.run( debug=True, port=8000 )

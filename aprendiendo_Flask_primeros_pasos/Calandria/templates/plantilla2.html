@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+
+{% block title%} 
+PLC
+{% endblock %}
+
+
+{% block contenido %}
+	{% for i in lista %}
+		<p>{{ i }}</p>
+	{% endfor %}
+{% endblock %}
